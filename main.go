@@ -1,6 +1,6 @@
 package main
 
-// we will not be using a database for this, we will be using structs and slices to
+// we will not be using a database for this, we will be using structs and slices to then modify in Postman
 import (
 	"encoding/json" // encode data into json when sent into postman
 	"fmt"           // to print stuff out to screen when conenctedf to server
@@ -79,6 +79,7 @@ func createMovie(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(movie)
 }
 
+// to update you will be combining both delete and create into one.
 func updateMovie(w http.ResponseWriter, r *http.Request) {
 	//set json content type
 	w.Header().Set("Content-Type", "application/json")
